@@ -1,0 +1,19 @@
+{
+  "short_name": "Garden Map",
+  "name": "Master Garden Layout Map",
+  "description": "Interactive staggered $4x4$ raised bed garden layout and planting map.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512 192x192 128x128 96x96 48x48",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#1b5e20",
+  "theme_color": "#1b5e20",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "./"
+}
