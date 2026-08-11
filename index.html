@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Garden Layout Map — All Waves (W1, W2, W3)</title>
+  <title>Master Garden Layout Map — Winter Plan (Aug 9 ref.)</title>
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <!-- PWA Manifest & Web Icon Link -->
   <link rel="manifest" href="manifest.json">
@@ -12,7 +13,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Garden Map"> 
+  <meta name="apple-mobile-web-app-title" content="Garden Map">
   <style>
     :root {
       --bg-color: #f0f4f1;
@@ -51,7 +52,7 @@
       background: #ffffff;
       padding: 10px;
       border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
       border: 1px solid #e0e0e0;
       box-sizing: border-box;
     }
@@ -76,7 +77,8 @@
       transition: all 0.2s ease;
     }
 
-    .btn:hover, .btn.active-preset {
+    .btn:hover,
+    .btn.active-preset {
       background: #2e7d32;
       color: #ffffff;
       border-color: #2e7d32;
@@ -123,7 +125,7 @@
     .bed-card {
       border-radius: 8px;
       padding: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       background-color: var(--card-bg);
       border: 2px solid var(--border-inactive);
       grid-column: span 4;
@@ -233,33 +235,102 @@
       line-height: 1;
     }
 
-    /* Wave Tag Colors */
-    .w1-tag { background-color: #2e7d32; }
-    .w2-tag { background-color: #e65100; }
-    .w3-tag { background-color: #6a1b9a; }
-    .garlic-tag { background-color: #37474f; }
+    /* Status Tag Colors (reused from original wave-tag classes) */
+    .w1-tag {
+      background-color: #2e7d32;
+    }
 
+    /* NOW */
+    .w2-tag {
+      background-color: #e65100;
+    }
+
+    /* INTERIM */
+    .w3-tag {
+      background-color: #6a1b9a;
+    }
+
+    /* LATER */
+    .garlic-tag {
+      background-color: #37474f;
+    }
+
+    /* GARLIC (Nov) */
     /* Color Themes */
-    .perimeter { background-color: #e8f5e9; border: 1px solid #81c784; color: #1b5e20; }
-    .core-brassica { background-color: #c8e6c9; border: 1.5px solid #4caf50; color: #003300; }
-    .core-root { background-color: #ffe0b2; border: 1.5px solid #ffb74d; color: #e65100; }
-    .core-nightshade { background-color: #f8bbd0; border: 1.5px solid #f48fb1; color: #880e4f; }
-    .herb { background-color: #fff9c4; border: 1px solid #fff59d; color: #f57f17; }
-    .empty-cell { background-color: #fafafa; border: 1px dashed #ccc; color: #aaa; justify-content: center; }
+    .perimeter {
+      background-color: #e8f5e9;
+      border: 1px solid #81c784;
+      color: #1b5e20;
+    }
+
+    .core-brassica {
+      background-color: #c8e6c9;
+      border: 1.5px solid #4caf50;
+      color: #003300;
+    }
+
+    .core-root {
+      background-color: #ffe0b2;
+      border: 1.5px solid #ffb74d;
+      color: #e65100;
+    }
+
+    .core-nightshade {
+      background-color: #f8bbd0;
+      border: 1.5px solid #f48fb1;
+      color: #880e4f;
+    }
+
+    .herb {
+      background-color: #fff9c4;
+      border: 1px solid #fff59d;
+      color: #f57f17;
+    }
+
+    .empty-cell {
+      background-color: #fafafa;
+      border: 1px dashed #ccc;
+      color: #aaa;
+      justify-content: center;
+    }
 
     /* PHYSICAL STAGGERED BRICKWORK ALIGNMENT */
     @media (min-width: 768px) {
-      .row-1 { grid-row: 1; }
-      .row-2 { grid-row: 2; }
-      .row-3 { grid-row: 3; }
-      .row-4 { grid-row: 4; }
+      .row-1 {
+        grid-row: 1;
+      }
 
-      .col-bed-left { grid-column: 1 / span 4; }
-      .col-bed-mid  { grid-column: 5 / span 4; }
-      .col-bed-right{ grid-column: 9 / span 4; }
+      .row-2 {
+        grid-row: 2;
+      }
 
-      .col-stagger-left  { grid-column: 3 / span 4; }
-      .col-stagger-right { grid-column: 7 / span 4; }
+      .row-3 {
+        grid-row: 3;
+      }
+
+      .row-4 {
+        grid-row: 4;
+      }
+
+      .col-bed-left {
+        grid-column: 1 / span 4;
+      }
+
+      .col-bed-mid {
+        grid-column: 5 / span 4;
+      }
+
+      .col-bed-right {
+        grid-column: 9 / span 4;
+      }
+
+      .col-stagger-left {
+        grid-column: 3 / span 4;
+      }
+
+      .col-stagger-right {
+        grid-column: 7 / span 4;
+      }
     }
 
     /* MOBILE STACKING */
@@ -269,24 +340,56 @@
         flex-direction: column;
         gap: 12px;
       }
+
       .bed-card {
         width: 100%;
       }
+
       .cell {
         aspect-ratio: auto;
         min-height: 42px;
       }
+
       /* Numerical ordering for mobile vertical stack */
-      #bed-1  { order: 1; }
-      #bed-2  { order: 2; }
-      #bed-3  { order: 3; }
-      #bed-4  { order: 4; }
-      #bed-5  { order: 5; }
-      #bed-6  { order: 6; }
-      #bed-7  { order: 7; }
-      #bed-8  { order: 8; }
-      #bed-9  { order: 9; }
-      #bed-10 { order: 10; }
+      #bed-1 {
+        order: 1;
+      }
+
+      #bed-2 {
+        order: 2;
+      }
+
+      #bed-3 {
+        order: 3;
+      }
+
+      #bed-4 {
+        order: 4;
+      }
+
+      #bed-5 {
+        order: 5;
+      }
+
+      #bed-6 {
+        order: 6;
+      }
+
+      #bed-7 {
+        order: 7;
+      }
+
+      #bed-8 {
+        order: 8;
+      }
+
+      #bed-9 {
+        order: 9;
+      }
+
+      #bed-10 {
+        order: 10;
+      }
     }
 
     .legend {
@@ -305,20 +408,19 @@
     }
   </style>
 </head>
-<body>
 
-  <h1>🌱 Master Raised Bed Garden Map — All Waves</h1>
-  <div class="subtitle">Row Layout: [ Perimeter Left ] | [ Core Center ] | [ Core Center ] | [ Perimeter Right ]</div>
+<body>
+  <h1>🌱 Master Raised Bed Garden Map — Winter Plan</h1>
+  <div class="subtitle">Row Layout: [ Perimeter/CCA Outer ] | [ Core Crop Inner ] | Reference date: Aug 9 — badges
+    marked "CCA"/"trial" are ongoing or undetermined-count crops, not a fixed plant total</div>
 
   <!-- CONTROLS -->
   <div class="controls-panel">
     <div class="control-group">
       <button class="btn" onclick="showPreset('all')">Show All Beds</button>
-      <button class="btn active-preset" onclick="showPreset('active')">Active Beds Only</button>
-      <button class="btn" onclick="showPreset('wave1')">Wave 1 Only (Aug 7-8)</button>
-      <button class="btn" onclick="showPreset('wave2')">Wave 2 Only (Sept 12)</button>
-      <button class="btn" onclick="showPreset('wave3')">Wave 3 Only (Sept 28)</button>
-      <button class="btn" onclick="showPreset('garlic')">Garlic Only (Nov 1)</button>
+      <button class="btn active-preset" onclick="showPreset('active')">Ready Now</button>
+      <button class="btn" onclick="showPreset('pending')">Pending Clearance</button>
+      <button class="btn" onclick="showPreset('tarped')">Tarped / Unavailable</button>
     </div>
     <div class="chip-group" id="chipContainer"></div>
   </div>
@@ -329,208 +431,600 @@
     <!-- ROW 1: Beds 3, 2, 1 side-by-side -->
     <div class="bed-card inactive row-1 col-bed-left" id="bed-3">
       <div class="bed-title">SQUARE 3</div>
-      <div class="bed-subtitle">Resting / Cover Crop</div>
+      <div class="bed-subtitle">Occupied (Zucchini) — Free in Autumn</div>
       <div class="sub-grid">
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Kale</strong><span
+            class="details">Lacinato</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>White Cabbage</strong><span
+            class="details">trial, one-off</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Red Cabbage</strong><span
+            class="details">trial, one-off</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Swiss Chard</strong><span
+            class="details">CCA</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Kale</strong><span
+            class="details">Curly</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Pointed Cab.</strong><span
+            class="details">trial, one-off</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Iceberg Lett.</strong><span
+            class="details">Batch 1, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Swiss Chard</strong><span
+            class="details">CCA</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+
+        <div class="cell empty-cell">Open</div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Iceberg Lett.</strong><span
+            class="details">Batch 2, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Iceberg Lett.</strong><span
+            class="details">Batch 1, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell empty-cell">Open</div>
+
+        <div class="cell empty-cell">Open</div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Iceberg Lett.</strong><span
+            class="details">Batch 2, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Iceberg Lett.</strong><span
+            class="details">Batch 3</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell empty-cell">Open</div>
       </div>
     </div>
 
     <div class="bed-card active row-1 col-bed-mid" id="bed-2">
       <div class="bed-title">SQUARE 2</div>
-      <div class="bed-subtitle">Carrots (W1 & W2) & Winter Greens</div>
+      <div class="bed-subtitle">Radish (interim) — Cauliflower, 4 rounds total</div>
       <div class="sub-grid">
-        <!-- Row 1 -->
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span class="details">Winter Giant</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Nantes 3</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Nantes 3</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell herb"><span class="type">PERIM</span><strong>Parsley</strong><span class="details">Prezzemolo</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da
+            Orto</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Radish</strong><span class="details">interim →
+            Cauliflower R4-A</span>
+          <div class="meta-row"><span class="count">x10</span><span class="wave-tag w2-tag">INTERIM</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Radish</strong><span class="details">interim →
+            Cauliflower R4-B</span>
+          <div class="meta-row"><span class="count">x10</span><span class="wave-tag w2-tag">INTERIM</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da
+            Orto</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
 
-        <!-- Row 2 -->
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span class="details">Winter Giant</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Nantes 3</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Nantes 3</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Chicory</strong><span class="details">Zuccherina</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w2-tag">W2</span></div></div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da
+            Orto</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Cauliflower</strong><span
+            class="details">Round 3, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Cauliflower</strong><span
+            class="details">Round 3, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da
+            Orto</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
 
-        <!-- Row 3 -->
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span class="details">Winter Giant</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Autumn King 2</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Autumn King 2</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Chicory</strong><span class="details">Zuccherina</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w2-tag">W2</span></div></div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da
+            Orto</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Cauliflower</strong><span
+            class="details">Round 2, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Cauliflower</strong><span
+            class="details">Round 2, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da
+            Orto</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
 
-        <!-- Row 4 -->
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span class="details">Winter Giant</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Autumn King 2</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Autumn King 2</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Da Taglio</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da
+            Orto</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Cauliflower</strong><span
+            class="details">Round 1, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Cauliflower</strong><span
+            class="details">Round 1, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da
+            Orto</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
       </div>
     </div>
 
     <div class="bed-card active row-1 col-bed-right" id="bed-1">
       <div class="bed-title">SQUARE 1</div>
-      <div class="bed-subtitle">Wave 1 Brassicas & Salads</div>
+      <div class="bed-subtitle">Tomato x6 + Basil / Parsley (companion)</div>
       <div class="sub-grid">
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span class="details">Matador</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Tuscan Kale</strong><span class="details">Nero di Tosc.</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Tuscan Kale</strong><span class="details">Nero di Tosc.</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell herb"><span class="type">PERIM</span><strong>Parsley</strong><span class="details">Prezzemolo</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell herb"><span class="type">PERIM</span><strong>Basil</strong><span
+            class="details">Genovese</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span
+            class="details">Transplant +2d</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span
+            class="details">Transplant +2d</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell herb"><span class="type">PERIM</span><strong>Parsley</strong><span
+            class="details">Prezzemolo</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
 
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span class="details">Matador</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Pointed Cab.</strong><span class="details">Cuore di Bue</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Pointed Cab.</strong><span class="details">Cuore di Bue</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Da Taglio</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell herb"><span class="type">PERIM</span><strong>Basil</strong><span
+            class="details">Genovese</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span
+            class="details">Transplant +4d</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span
+            class="details">Transplant +4d</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell herb"><span class="type">PERIM</span><strong>Parsley</strong><span
+            class="details">Prezzemolo</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
 
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span class="details">Matador</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span class="details">Calabrese</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span class="details">Calabrese</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Re-sowing</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w3-tag">W3</span></div></div>
+        <div class="cell herb"><span class="type">PERIM</span><strong>Basil</strong><span
+            class="details">Genovese</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span
+            class="details">Transplant +4d</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span
+            class="details">Transplant +4d</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell herb"><span class="type">PERIM</span><strong>Parsley</strong><span
+            class="details">Prezzemolo</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
 
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span class="details">Matador</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Cauliflower</strong><span class="details">Snowball X</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Cauliflower</strong><span class="details">Snowball X</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da Orto</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell herb"><span class="type">PERIM</span><strong>Basil</strong><span
+            class="details">Genovese</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell empty-cell">Open</div>
+        <div class="cell empty-cell">Open</div>
+        <div class="cell herb"><span class="type">PERIM</span><strong>Parsley</strong><span
+            class="details">Prezzemolo</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
       </div>
     </div>
 
     <!-- ROW 2: Beds 5 and 4 staggered beneath -->
     <div class="bed-card active row-2 col-stagger-left" id="bed-5">
       <div class="bed-title">SQUARE 5</div>
-      <div class="bed-subtitle">Transition Nightshades & Herbs</div>
+      <div class="bed-subtitle">Carrots + Root Trials — Full bed, all cells assigned</div>
       <div class="sub-grid">
-        <div class="cell herb"><span class="type">PERIM</span><strong>Basil</strong><span class="details">Genovese</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Eggplant</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Salad</strong><span class="details">Reine des Gl.</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Cornsalad</strong><span
+            class="details">trial</span>
+          <div class="meta-row"><span class="count">trial</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Nantes
+            3</span>
+          <div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Nantes
+            3</span>
+          <div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Chicory</strong><span
+            class="details">Zuccherina</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
 
-        <div class="cell herb"><span class="type">PERIM</span><strong>Basil</strong><span class="details">Genovese</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Pepper</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Salad</strong><span class="details">Salad Bowl</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Turnip</strong><span
+            class="details">trial</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Nantes
+            3</span>
+          <div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Autumn
+            King 2</span>
+          <div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Chicory</strong><span
+            class="details">Zuccherina</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
 
-        <div class="cell empty-cell">Open</div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Eggplant</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Eggplant</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell empty-cell">Open</div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Turnip</strong><span
+            class="details">trial</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Autumn
+            King 2</span>
+          <div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Carrots</strong><span class="details">Autumn
+            King 2</span>
+          <div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Chicory</strong><span
+            class="details">Zuccherina</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
 
-        <div class="cell empty-cell">Open</div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Pepper</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Pepper</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell empty-cell">Open</div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Golden Beet</strong><span
+            class="details">trial</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Golden Beet</strong><span
+            class="details">trial</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Black Radish</strong><span
+            class="details">trial</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Black Radish</strong><span
+            class="details">trial</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
       </div>
     </div>
 
-    <div class="bed-card active row-2 col-stagger-right" id="bed-4">
+    <div class="bed-card inactive row-2 col-stagger-right" id="bed-4">
       <div class="bed-title">SQUARE 4</div>
-      <div class="bed-subtitle">Radishes (W1, W2, W3) & Nightshades</div>
+      <div class="bed-subtitle">Occupied (Chicory) — Broccoli next, 1/cell</div>
       <div class="sub-grid">
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Salad Bowl</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Red Radish</strong><span class="details">Saxa 2</span><div class="meta-row"><span class="count">x16</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Black Radish</strong><span class="details">Ramolaccio 1st</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell herb"><span class="type">PERIM</span><strong>Basil</strong><span class="details">Genovese</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Da
+            Taglio, CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span
+            class="details">Round 1, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span
+            class="details">Round 1, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Salad
+            Bowl, CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
 
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Re-sowing</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w3-tag">W3</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Black Radish</strong><span class="details">Ramolaccio 2nd</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag w3-tag">W3</span></div></div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell empty-cell">Open</div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Da
+            Taglio, CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span
+            class="details">Round 2, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span
+            class="details">Round 2, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Salad
+            Bowl, CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
 
-        <div class="cell empty-cell">Open</div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Pepper</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Pepper</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell empty-cell">Open</div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Da
+            Taglio, CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span
+            class="details">Round 3, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span
+            class="details">Round 3, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Salad
+            Bowl, CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
 
-        <div class="cell empty-cell">Open</div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span class="details">Transplant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell empty-cell">Open</div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Da
+            Taglio, CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span
+            class="details">Round 4, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span
+            class="details">Round 4, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Salad
+            Bowl, CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
       </div>
     </div>
 
     <!-- ROW 3: Beds 8, 7, 6 side-by-side -->
-    <div class="bed-card active row-3 col-bed-left" id="bed-8">
+    <div class="bed-card inactive row-3 col-bed-left" id="bed-8">
       <div class="bed-title">SQUARE 8</div>
-      <div class="bed-subtitle">Garlic (Nov 1 Overwintering)</div>
+      <div class="bed-subtitle">Occupied (Peas) — Savoy/Brussels next</div>
       <div class="sub-grid">
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span
+            class="details">CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Savoy Cab.</strong><span
+            class="details">Batch 1, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Savoy Cab.</strong><span
+            class="details">Batch 1, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span
+            class="details">CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
 
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span
+            class="details">CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Savoy Cab.</strong><span
+            class="details">Batch 1, plant C</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Savoy Cab.</strong><span
+            class="details">Batch 2, plant A</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span
+            class="details">CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
 
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span
+            class="details">CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Savoy Cab.</strong><span
+            class="details">Batch 2, plant B</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Savoy Cab.</strong><span
+            class="details">Batch 2, plant C</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span
+            class="details">CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
 
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Garlic</strong><span class="details">Nov Plant</span><div class="meta-row"><span class="count">x4</span><span class="wave-tag garlic-tag">G</span></div></div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span
+            class="details">CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Brussels Sp.</strong><span
+            class="details">single plant</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell empty-cell">Open</div>
+        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span
+            class="details">CCA</span>
+          <div class="meta-row"><span class="count">CCA</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
       </div>
     </div>
 
     <div class="bed-card inactive row-3 col-bed-mid" id="bed-7">
       <div class="bed-title">SQUARE 7</div>
-      <div class="bed-subtitle">Resting / Soil Prep</div>
+      <div class="bed-subtitle">Tarped — Unavailable</div>
       <div class="sub-grid">
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
       </div>
     </div>
 
     <div class="bed-card active row-3 col-bed-right" id="bed-6">
       <div class="bed-title">SQUARE 6</div>
-      <div class="bed-subtitle">Winter Cabbages (W1 & W2) & Greens</div>
+      <div class="bed-subtitle">Garlic whole bed by Nov (6 wait on radish + tomato)</div>
       <div class="sub-grid">
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da Orto</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Savoy Cab.</strong><span class="details">Verza</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Savoy Cab.</strong><span class="details">Verza</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da Orto</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Radish</strong><span class="details">Batch 2a,
+            interim → Garlic (Nov, once radish clears)</span>
+          <div class="meta-row"><span class="count">x10</span><span class="wave-tag w2-tag">INTERIM</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span
+            class="details">reserved, hardening → Garlic (Nov, once tomato clears)</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span
+            class="details">reserved, hardening → Garlic (Nov, once tomato clears)</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov
+            planting — cell already free</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag garlic-tag">G</span></div>
+        </div>
 
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span class="details">Matador</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Red Cabbage</strong><span class="details">Tête Noire 3</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Red Cabbage</strong><span class="details">Tête Noire 3</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Spinach</strong><span class="details">Matador</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Radish</strong><span class="details">Batch 2b,
+            interim → Garlic (Nov, once radish clears)</span>
+          <div class="meta-row"><span class="count">x10</span><span class="wave-tag w2-tag">INTERIM</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span
+            class="details">reserved, hardening → Garlic (Nov, once tomato clears)</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Tomato</strong><span
+            class="details">reserved, hardening → Garlic (Nov, once tomato clears)</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w3-tag">LATER</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov
+            planting — cell already free</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag garlic-tag">G</span></div>
+        </div>
 
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Da Taglio</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Brussels Sp.</strong><span class="details">Single Plant</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Savoy Cab.</strong><span class="details">Verza W2</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Da Taglio</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov
+            planting — cell already free</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag garlic-tag">G</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov
+            planting — cell already free</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag garlic-tag">G</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov
+            planting — cell already free</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag garlic-tag">G</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov
+            planting — cell already free</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag garlic-tag">G</span></div>
+        </div>
 
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Lettuce</strong><span class="details">Da Taglio</span><div class="meta-row"><span class="count">x6</span><span class="wave-tag w1-tag">W1</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Broccoli</strong><span class="details">Calabrese W2</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell core-brassica"><span class="type">BRASSICA</span><strong>Cauliflower</strong><span class="details">Snowball W2</span><div class="meta-row"><span class="count">x1</span><span class="wave-tag w2-tag">W2</span></div></div>
-        <div class="cell perimeter"><span class="type">PERIM</span><strong>Rocket</strong><span class="details">Da Orto</span><div class="meta-row"><span class="count">x9</span><span class="wave-tag w1-tag">W1</span></div></div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov
+            planting — cell already free</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag garlic-tag">G</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov
+            planting — cell already free</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag garlic-tag">G</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov
+            planting — cell already free</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag garlic-tag">G</span></div>
+        </div>
+        <div class="cell core-root"><span class="type">ROOT</span><strong>Garlic</strong><span class="details">Nov
+            planting — cell already free</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag garlic-tag">G</span></div>
+        </div>
       </div>
     </div>
 
     <!-- ROW 4: Beds 10 and 9 staggered beneath -->
-    <div class="bed-card inactive row-4 col-stagger-left" id="bed-10">
+    <div class="bed-card active row-4 col-stagger-left" id="bed-10">
       <div class="bed-title">SQUARE 10</div>
-      <div class="bed-subtitle">Resting / Backup</div>
+      <div class="bed-subtitle">Eggplant (afternoon sun) + Pepper (morning sun + 1 outer) — Later hardening</div>
       <div class="sub-grid">
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Open</div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Eggplant</strong><span
+            class="details">Transplant — afternoon sun</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Pepper</strong><span
+            class="details">Transplant — morning sun</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Pepper</strong><span
+            class="details">Transplant — 5th plant, outer</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+
+        <div class="cell empty-cell">Open</div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Eggplant</strong><span
+            class="details">Transplant — afternoon sun</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Pepper</strong><span
+            class="details">Transplant — morning sun</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell empty-cell">Open</div>
+
+        <div class="cell empty-cell">Open</div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Eggplant</strong><span
+            class="details">Transplant — afternoon sun</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Pepper</strong><span
+            class="details">Transplant — morning sun</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell empty-cell">Open</div>
+
+        <div class="cell empty-cell">Open</div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Eggplant</strong><span
+            class="details">Transplant — afternoon sun</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell core-nightshade"><span class="type">NIGHTSHADE</span><strong>Pepper</strong><span
+            class="details">Transplant — morning sun</span>
+          <div class="meta-row"><span class="count">x1</span><span class="wave-tag w1-tag">NOW</span></div>
+        </div>
+        <div class="cell empty-cell">Open</div>
       </div>
     </div>
 
     <div class="bed-card inactive row-4 col-stagger-right" id="bed-9">
       <div class="bed-title">SQUARE 9</div>
-      <div class="bed-subtitle">Resting / Soil Prep</div>
+      <div class="bed-subtitle">Tarped — Unavailable</div>
       <div class="sub-grid">
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
-        <div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div><div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
+        <div class="cell empty-cell">Empty</div>
       </div>
     </div>
 
@@ -543,19 +1037,17 @@
     <span><strong style="color: #e65100;">■</strong> Core Roots</span>
     <span><strong style="color: #880e4f;">■</strong> Core Nightshades</span>
     <span><strong style="color: #f57f17;">■</strong> Herbs</span>
-    <span><strong class="wave-tag w1-tag">W1</strong> Wave 1</span>
-    <span><strong class="wave-tag w2-tag">W2</strong> Wave 2</span>
-    <span><strong class="wave-tag w3-tag">W3</strong> Wave 3</span>
-    <span><strong class="wave-tag garlic-tag">G</strong> Garlic</span>
+    <span><strong class="wave-tag w1-tag">NOW</strong> Planting now</span>
+    <span><strong class="wave-tag w2-tag">INTERIM</strong> Temporary catch-crop</span>
+    <span><strong class="wave-tag w3-tag">LATER</strong> Next occupant, bed still busy</span>
+    <span><strong class="wave-tag garlic-tag">G</strong> Garlic, Nov</span>
   </div>
 
   <script>
     const allBedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const activeBedIds = [1, 2, 4, 5, 6, 8];
-    const wave1BedIds = [1, 2, 4, 5, 6];
-    const wave2BedIds = [2, 4, 6];
-    const wave3BedIds = [1, 4];
-    const garlicBedIds = [8];
+    const activeBedIds = [1, 2, 5, 6, 10];
+    const pendingBedIds = [3, 4, 8];
+    const tarpedBedIds = [7, 9];
 
     const chipContainer = document.getElementById('chipContainer');
     allBedIds.forEach(id => {
@@ -588,14 +1080,10 @@
         const bed = document.getElementById(`bed-${id}`);
         const chip = document.getElementById(`chip-${id}`);
         let show = false;
-
         if (preset === 'all') show = true;
         if (preset === 'active' && activeBedIds.includes(id)) show = true;
-        if (preset === 'wave1' && wave1BedIds.includes(id)) show = true;
-        if (preset === 'wave2' && wave2BedIds.includes(id)) show = true;
-        if (preset === 'wave3' && wave3BedIds.includes(id)) show = true;
-        if (preset === 'garlic' && garlicBedIds.includes(id)) show = true;
-
+        if (preset === 'pending' && pendingBedIds.includes(id)) show = true;
+        if (preset === 'tarped' && tarpedBedIds.includes(id)) show = true;
         if (show) {
           bed.classList.remove('hidden');
           chip.classList.add('selected');
@@ -610,6 +1098,6 @@
       document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active-preset'));
     }
   </script>
-
 </body>
+
 </html>
