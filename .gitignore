@@ -12,3 +12,6 @@ __compare_index_diff_summary.py
 .vs/Winter_plots.slnx/FileContentIndex/cf802a50-14bb-4b15-b320-9eff9cbe0882.vsidx
 .vs/Winter_plots.slnx/v18/.wsuo
 .vs/Winter_plots.slnx/v18/DocumentLayout.json
+__compare_index_diff_full.py
+.gitignore
+__make_colored_diff.py
