@@ -15,3 +15,5 @@ __compare_index_diff_summary.py
 __compare_index_diff_full.py
 .gitignore
 __make_colored_diff.py
+index_diff_colored.html
+index_diff_full.txt
